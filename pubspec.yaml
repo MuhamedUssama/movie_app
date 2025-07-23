@@ -43,6 +43,7 @@ dev_dependencies:
 
   flutter_lints: ^5.0.0
   json_serializable: ^6.9.5
+  retrofit_generator:
   build_runner: ^2.5.4
 
 flutter:
