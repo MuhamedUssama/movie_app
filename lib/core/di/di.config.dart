@@ -14,6 +14,10 @@ import 'package:get_it/get_it.dart' as _i174;
 import 'package:injectable/injectable.dart' as _i526;
 import 'package:pretty_dio_logger/pretty_dio_logger.dart' as _i528;
 
+import '../../features/authentication/data/data_sources/remote/auth_remote_data_source.dart'
+    as _i36;
+import '../../features/authentication/data/data_sources/remote/auth_remote_data_source_impl.dart'
+    as _i446;
 import '../network/network_module.dart' as _i200;
 import '../network/retrofit_client.dart' as _i74;
 
@@ -27,6 +31,9 @@ extension GetItInjectableX on _i174.GetIt {
     final networkModule = _$NetworkModule();
     gh.factory<_i528.PrettyDioLogger>(() => networkModule.prettyDioLogger());
     gh.lazySingleton<_i361.Dio>(() => networkModule.provideDio());
+    gh.lazySingleton<_i36.AuthRemoteDataSource>(
+      () => _i446.AuthRemoteDataSourceImpl(),
+    );
     gh.singleton<_i74.RetrofitClient>(
       () => _i74.RetrofitClient(gh<_i361.Dio>()),
     );

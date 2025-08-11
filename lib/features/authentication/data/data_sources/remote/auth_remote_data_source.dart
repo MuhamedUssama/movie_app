@@ -4,7 +4,7 @@ import 'package:movie_app_new_design/features/authentication/data/models/request
 import 'package:movie_app_new_design/features/authentication/data/models/request/register_request_model.dart';
 import 'package:movie_app_new_design/features/authentication/domain/entities/user_entity.dart';
 
-abstract interface class AuthDataSource {
+abstract interface class AuthRemoteDataSource {
   Future<Either<ServerException, UserEntity>> login({
     required LoginRequestModel requestModel,
   });
