@@ -3,6 +3,7 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
 import 'package:movie_app_new_design/core/theme/app_theme.dart';
+import 'package:movie_app_new_design/features/on_boarding/intro_screen.dart';
 
 class MovieApp extends StatelessWidget {
   const MovieApp({super.key});
@@ -26,7 +27,7 @@ class MovieApp extends StatelessWidget {
           ],
           supportedLocales: [Locale('en'), Locale('ar')],
           locale: Locale('en'),
-          home: Scaffold(),
+          home: IntroScreen(),
         );
       },
     );

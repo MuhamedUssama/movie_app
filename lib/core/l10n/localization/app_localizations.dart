@@ -106,6 +106,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Back'**
   String get back;
+
+  /// No description provided for @finish.
+  ///
+  /// In en, this message translates to:
+  /// **'Finish'**
+  String get finish;
+
+  /// No description provided for @exploreNow.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore Now'**
+  String get exploreNow;
+
+  /// No description provided for @introHeader.
+  ///
+  /// In en, this message translates to:
+  /// **'Find Your Next Favorite Movie Here'**
+  String get introHeader;
+
+  /// No description provided for @introDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Get access to a huge library of movies to suit all tastes. You will surely like it.'**
+  String get introDescription;
+
+  /// No description provided for @onBoardingHeader1.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover Movies'**
+  String get onBoardingHeader1;
+
+  /// No description provided for @onBoardingDescription1.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.'**
+  String get onBoardingDescription1;
+
+  /// No description provided for @onBoardingHeader2.
+  ///
+  /// In en, this message translates to:
+  /// **'Explore All Genres'**
+  String get onBoardingHeader2;
+
+  /// No description provided for @onBoardingDescription2.
+  ///
+  /// In en, this message translates to:
+  /// **'Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.'**
+  String get onBoardingDescription2;
+
+  /// No description provided for @onBoardingHeader3.
+  ///
+  /// In en, this message translates to:
+  /// **'Create Watchlists'**
+  String get onBoardingHeader3;
+
+  /// No description provided for @onBoardingDescription3.
+  ///
+  /// In en, this message translates to:
+  /// **'Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.'**
+  String get onBoardingDescription3;
+
+  /// No description provided for @onBoardingHeader4.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate, Review, and Learn'**
+  String get onBoardingHeader4;
+
+  /// No description provided for @onBoardingDescription4.
+  ///
+  /// In en, this message translates to:
+  /// **'Share your thoughts on the movies you\'ve watched. Dive deep into film details and help others discover great movies with your reviews.'**
+  String get onBoardingDescription4;
+
+  /// No description provided for @onBoardingHeader5.
+  ///
+  /// In en, this message translates to:
+  /// **'Start Watching Now'**
+  String get onBoardingHeader5;
 }
 
 class _AppLocalizationsDelegate extends LocalizationsDelegate<AppLocalizations> {
