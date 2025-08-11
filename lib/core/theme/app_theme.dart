@@ -8,7 +8,7 @@ abstract class AppTheme {
   static ThemeData _getTheme({required ColorScheme colorScheme}) {
     return ThemeData(
       scaffoldBackgroundColor: colorScheme.surface,
-
+      colorScheme: colorScheme,
       textTheme: TextTheme(
         bodyLarge: GoogleFonts.inter(
           color: colorScheme.onSurface,
@@ -20,12 +20,33 @@ abstract class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w400,
         ),
+        titleLarge: GoogleFonts.inter(
+          color: colorScheme.onSurface,
+          fontSize: 24.sp,
+          fontWeight: FontWeight.w700,
+        ),
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
           foregroundColor: colorScheme.onPrimary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          minimumSize: Size(double.infinity, 56.h),
+          textStyle: GoogleFonts.inter(
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+      ),
+
+      outlinedButtonTheme: OutlinedButtonThemeData(
+        style: OutlinedButton.styleFrom(
+          backgroundColor: colorScheme.surface,
+          foregroundColor: colorScheme.primary,
+          side: BorderSide(color: colorScheme.primary, width: 1.w),
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
           ),
