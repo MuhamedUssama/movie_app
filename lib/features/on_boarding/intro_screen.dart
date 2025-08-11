@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
+import 'package:movie_app_new_design/core/routes/routes_name.dart';
 import 'package:movie_app_new_design/core/theme/app_colors.dart';
 import 'package:movie_app_new_design/core/utils/app_assets.dart';
 
@@ -58,7 +59,12 @@ class IntroScreen extends StatelessWidget {
                 ),
                 SizedBox(height: 24.h),
                 ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(
+                      context,
+                      RoutesName.onBoarding,
+                    );
+                  },
                   child: Text(AppLocalizations.of(context)!.exploreNow),
                 ),
               ],

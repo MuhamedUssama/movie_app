@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:movie_app_new_design/core/routes/routes_name.dart';
 import 'package:movie_app_new_design/features/on_boarding/intro_screen.dart';
+import 'package:movie_app_new_design/features/on_boarding/on_boarding_screen.dart';
 
 abstract class AppRouter {
   static Route appRouter(RouteSettings settings) {
@@ -8,6 +9,12 @@ abstract class AppRouter {
       case RoutesName.introScreen:
         return MaterialPageRoute(
           builder: (_) => const IntroScreen(),
+          settings: settings,
+        );
+
+      case RoutesName.onBoarding:
+        return MaterialPageRoute(
+          builder: (_) => const OnBoardingScreen(),
           settings: settings,
         );
 
