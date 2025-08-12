@@ -6,12 +6,14 @@ class UserModel {
   final String name;
   final String email;
   final String phoneNumber;
+  final String? imageId;
 
   const UserModel({
     required this.id,
     required this.name,
     required this.email,
     required this.phoneNumber,
+    this.imageId = '1',
   });
 
   factory UserModel.fromJson(Map<String, dynamic> json) {
@@ -20,11 +22,18 @@ class UserModel {
       name: json['name'] as String,
       email: json['email'] as String,
       phoneNumber: json['phoneNumber'] as String,
+      imageId: json['imageId'] as String? ?? '1',
     );
   }
 
   Map<String, dynamic> toJson() {
-    return {'id': id, 'name': name, 'email': email, 'phoneNumber': phoneNumber};
+    return {
+      'id': id,
+      'name': name,
+      'email': email,
+      'phoneNumber': phoneNumber,
+      'imageId': imageId ?? '1',
+    };
   }
 
   UserEntity toEntity() {
@@ -33,6 +42,7 @@ class UserModel {
       name: name,
       email: email,
       phoneNumber: phoneNumber,
+      imageId: imageId ?? '1',
     );
   }
 }

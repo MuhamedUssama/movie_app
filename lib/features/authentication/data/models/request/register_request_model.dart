@@ -4,6 +4,7 @@ class RegisterRequestModel {
   final String password;
   final String confirmPassword;
   final String phoneNumber;
+  final String imageId;
 
   const RegisterRequestModel({
     required this.name,
@@ -11,5 +12,6 @@ class RegisterRequestModel {
     required this.password,
     required this.confirmPassword,
     required this.phoneNumber,
+    this.imageId = '1',
   });
 }

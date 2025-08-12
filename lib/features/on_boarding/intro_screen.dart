@@ -48,7 +48,6 @@ class IntroScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.bodyLarge,
                   textAlign: TextAlign.center,
                 ),
-                Row(),
                 SizedBox(height: 16.h),
                 Text(
                   AppLocalizations.of(context)!.introDescription,

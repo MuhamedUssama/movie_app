@@ -72,6 +72,7 @@ class AuthRemoteDataSourceImpl implements AuthRemoteDataSource {
         name: requestModel.name,
         email: requestModel.email,
         phoneNumber: requestModel.phoneNumber,
+        imageId: requestModel.imageId,
       );
 
       CollectionReference usersCollection = FirebaseHelper.getUserCollection();

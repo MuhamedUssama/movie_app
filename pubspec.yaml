@@ -39,6 +39,7 @@ dependencies:
   google_fonts: ^6.3.0
   animate_do: ^4.2.0
   google_sign_in: ^6.2.2
+  flutter_bloc: ^9.1.1
 
 dev_dependencies:
   flutter_test:
@@ -56,3 +57,4 @@ flutter:
   assets:
     - assets/images/
     - assets/svgs/
+    - assets/avatars/
