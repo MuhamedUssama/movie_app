@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
 import 'package:movie_app_new_design/core/utils/app_assets.dart';
 
+import '../cubits/login_cubit/login_states.dart';
 import '../cubits/login_cubit/login_view_model.dart';
 import 'dont_have_account.dart';
 import 'login_form_fields.dart';
@@ -42,7 +44,22 @@ class LoginScreenBody extends StatelessWidget {
               onPressed: () {
                 context.read<LoginViewModel>().loginWithEmailAndPassword();
               },
-              child: Text(locale.login),
+              child: BlocBuilder<LoginViewModel, LoginStates>(
+                buildWhen:
+                    (previous, current) =>
+                        current is LoginLoadingState ||
+                        current is LoginSuccessState ||
+                        current is LoginFaliureState,
+                builder: (context, state) {
+                  if (state is LoginLoadingState) {
+                    return LoadingAnimationWidget.staggeredDotsWave(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                      size: 40,
+                    );
+                  }
+                  return Text(locale.login);
+                },
+              ),
             ),
             const SizedBox(height: 16),
             const DontHaveAccount(),
@@ -53,13 +70,29 @@ class LoginScreenBody extends StatelessWidget {
               onPressed: () {
                 context.read<LoginViewModel>().loginWithGoogle();
               },
-              child: Row(
-                spacing: 12.w,
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  SvgPicture.asset(AppIcons.google, fit: BoxFit.scaleDown),
-                  Text(locale.loginWithGoogle),
-                ],
+              child: BlocBuilder<LoginViewModel, LoginStates>(
+                buildWhen:
+                    (previous, current) =>
+                        current is LoginWithGoogleLoadingState ||
+                        current is LoginWithGoogleSuccessState ||
+                        current is LoginFaliureState,
+
+                builder: (context, state) {
+                  if (state is LoginWithGoogleLoadingState) {
+                    return LoadingAnimationWidget.staggeredDotsWave(
+                      color: Theme.of(context).colorScheme.onPrimary,
+                      size: 40,
+                    );
+                  }
+                  return Row(
+                    spacing: 12.w,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(AppIcons.google, fit: BoxFit.scaleDown),
+                      Text(locale.loginWithGoogle),
+                    ],
+                  );
+                },
               ),
             ),
           ],

@@ -12,7 +12,7 @@ class UserModel {
     required this.id,
     required this.name,
     required this.email,
-    required this.phoneNumber,
+    this.phoneNumber = '',
     this.imageId = '1',
   });
 

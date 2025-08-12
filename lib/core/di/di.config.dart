@@ -34,6 +34,8 @@ import '../../features/authentication/domain/usecases/sign_out_usecase.dart'
     as _i749;
 import '../../features/authentication/domain/usecases/vreify_account_usecase.dart'
     as _i39;
+import '../../features/authentication/presentation/cubits/forget_password_cubit/forget_password_view_model.dart'
+    as _i77;
 import '../../features/authentication/presentation/cubits/login_cubit/login_view_model.dart'
     as _i464;
 import '../../features/authentication/presentation/cubits/register_cubit/register_view_model.dart'
@@ -78,14 +80,20 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i39.VreifyAccountUsecase>(
       () => _i39.VreifyAccountUsecase(gh<_i170.AuthRepository>()),
     );
+    gh.factory<_i181.RegisterViewModel>(
+      () => _i181.RegisterViewModel(
+        gh<_i257.RegisterUsecase>(),
+        gh<_i39.VreifyAccountUsecase>(),
+      ),
+    );
+    gh.factory<_i77.ForgetPasswordViewModel>(
+      () => _i77.ForgetPasswordViewModel(gh<_i25.ForgetPasswordUsecase>()),
+    );
     gh.factory<_i464.LoginViewModel>(
       () => _i464.LoginViewModel(
         gh<_i599.LoginWithEmailAndPasswordUsecase>(),
         gh<_i70.LoginWithGoogleUsecase>(),
       ),
-    );
-    gh.factory<_i181.RegisterViewModel>(
-      () => _i181.RegisterViewModel(gh<_i257.RegisterUsecase>()),
     );
     return this;
   }

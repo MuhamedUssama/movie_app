@@ -18,3 +18,13 @@ class RegisterFaliureState extends RegisterStates {
 class RegisterSuccessState extends RegisterStates {
   const RegisterSuccessState();
 }
+
+class VerifyAccountSuccessState extends RegisterStates {
+  final String message;
+  const VerifyAccountSuccessState({required this.message});
+}
+
+class VerifyAccountFailureState extends RegisterStates {
+  final String message;
+  const VerifyAccountFailureState({required this.message});
+}

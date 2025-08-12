@@ -65,7 +65,7 @@ class OnBoardingContent extends StatelessWidget {
                 } else {
                   Navigator.pushReplacementNamed(
                     context,
-                    RoutesName.registerScreen,
+                    RoutesName.loginScreen,
                   );
                 }
               },
