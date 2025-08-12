@@ -10,7 +10,9 @@ class HomeScreenViewModel extends Cubit<HomeScreenState> {
   int currentIndex = 0;
 
   void changeTab(int index) {
-    currentIndex = index;
-    emit(ChangeTabState(currentIndex));
+    if (currentIndex != index) {
+      currentIndex = index;
+      emit(ChangeTabState(currentIndex));
+    }
   }
 }
