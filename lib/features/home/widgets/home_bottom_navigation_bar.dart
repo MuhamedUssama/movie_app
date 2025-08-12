@@ -21,6 +21,8 @@ class HomeBottomNavigationBar extends StatelessWidget {
       ),
       child: BottomAppBar(
         height: 96.h,
+        color: Colors.transparent,
+        padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),
         child: ClipRRect(
           borderRadius: BorderRadius.circular(16.r),
           child: BottomNavigationBar(
