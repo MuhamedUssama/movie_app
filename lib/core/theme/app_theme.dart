@@ -25,6 +25,51 @@ abstract class AppTheme {
           fontSize: 24.sp,
           fontWeight: FontWeight.w700,
         ),
+        bodySmall: GoogleFonts.roboto(
+          color: colorScheme.primary,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+        ),
+        labelMedium: GoogleFonts.roboto(
+          color: colorScheme.onSecondary,
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w500,
+        ),
+      ),
+
+      dividerColor: colorScheme.primary,
+      dividerTheme: DividerThemeData(
+        color: colorScheme.primary,
+        thickness: 1.w,
+        space: 16.h,
+      ),
+
+      appBarTheme: AppBarTheme(
+        backgroundColor: colorScheme.surface,
+        foregroundColor: colorScheme.primary,
+        titleTextStyle: GoogleFonts.inter(
+          fontSize: 16.sp,
+          color: colorScheme.primary,
+          fontWeight: FontWeight.w400,
+        ),
+        centerTitle: true,
+      ),
+
+      textSelectionTheme: TextSelectionThemeData(
+        cursorColor: colorScheme.primary,
+        selectionColor: colorScheme.primary.withValues(alpha: 0.5),
+        selectionHandleColor: colorScheme.primary,
+      ),
+
+      textButtonTheme: TextButtonThemeData(
+        style: TextButton.styleFrom(
+          foregroundColor: colorScheme.primary,
+          textStyle: GoogleFonts.roboto(
+            fontSize: 14.sp,
+            color: colorScheme.primary,
+            fontWeight: FontWeight.w900,
+          ),
+        ),
       ),
 
       elevatedButtonTheme: ElevatedButtonThemeData(
@@ -35,9 +80,9 @@ abstract class AppTheme {
             borderRadius: BorderRadius.circular(16.r),
           ),
           minimumSize: Size(double.infinity, 56.h),
-          textStyle: GoogleFonts.inter(
+          textStyle: GoogleFonts.roboto(
             fontSize: 20.sp,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w400,
           ),
         ),
       ),
@@ -51,10 +96,42 @@ abstract class AppTheme {
             borderRadius: BorderRadius.circular(16.r),
           ),
           minimumSize: Size(double.infinity, 56.h),
-          textStyle: GoogleFonts.inter(
+          textStyle: GoogleFonts.roboto(
             fontSize: 20.sp,
-            fontWeight: FontWeight.w600,
+            fontWeight: FontWeight.w400,
           ),
+        ),
+      ),
+
+      inputDecorationTheme: InputDecorationTheme(
+        filled: true,
+        fillColor: colorScheme.secondary,
+        hintStyle: GoogleFonts.roboto(
+          color: colorScheme.onSecondary,
+          fontSize: 16.sp,
+          fontWeight: FontWeight.w400,
+        ),
+        suffixIconColor: colorScheme.onSecondary,
+        prefixIconColor: colorScheme.onSecondary,
+        border: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(color: Colors.transparent, width: 0),
+        ),
+        enabledBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(color: Colors.transparent, width: 0),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(color: Colors.transparent, width: 0),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(color: Colors.transparent, width: 0),
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(16.r),
+          borderSide: BorderSide(color: Colors.transparent, width: 0),
         ),
       ),
     );

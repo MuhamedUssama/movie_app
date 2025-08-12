@@ -15,41 +15,125 @@ class AppLocalizationsAr extends AppLocalizations {
   String get back => 'السابق';
 
   @override
-  String get finish => 'Finish';
+  String get finish => 'إنهاء';
 
   @override
-  String get exploreNow => 'Explore Now';
+  String get exploreNow => 'استكشف الآن';
 
   @override
-  String get introHeader => 'Find Your Next Favorite Movie Here';
+  String get introHeader => 'اعثر على فيلمك المفضل القادم هنا';
 
   @override
-  String get introDescription => 'Get access to a huge library of movies to suit all tastes. You will surely like it.';
+  String get introDescription => 'احصل على وصول إلى مكتبة ضخمة من الأفلام التي تناسب جميع الأذواق. ستعجبك بالتأكيد.';
 
   @override
-  String get onBoardingHeader1 => 'Discover Movies';
+  String get onBoardingHeader1 => 'اكتشف الأفلام';
 
   @override
-  String get onBoardingDescription1 => 'Explore a vast collection of movies in all qualities and genres. Find your next favorite film with ease.';
+  String get onBoardingDescription1 => 'استكشف مجموعة واسعة من الأفلام بجميع الجودات والأنواع. اعثر على فيلمك المفضل القادم بسهولة.';
 
   @override
-  String get onBoardingHeader2 => 'Explore All Genres';
+  String get onBoardingHeader2 => 'استكشف جميع الأنواع';
 
   @override
-  String get onBoardingDescription2 => 'Discover movies from every genre, in all available qualities. Find something new and exciting to watch every day.';
+  String get onBoardingDescription2 => 'اكتشف الأفلام من جميع الأنواع وبكل الجودات المتاحة. ابحث عن شيء جديد ومثير لمشاهدته كل يوم.';
 
   @override
-  String get onBoardingHeader3 => 'Create Watchlists';
+  String get onBoardingHeader3 => 'أنشئ قوائم مشاهدة';
 
   @override
-  String get onBoardingDescription3 => 'Save movies to your watchlist to keep track of what you want to watch next. Enjoy films in various qualities and genres.';
+  String get onBoardingDescription3 => 'احفظ الأفلام في قائمة المشاهدة الخاصة بك لتتابع ما تريد مشاهدته لاحقًا. استمتع بالأفلام بجودات وأنواع متنوعة.';
 
   @override
-  String get onBoardingHeader4 => 'Rate, Review, and Learn';
+  String get onBoardingHeader4 => 'قيّم وراجع وتعلّم';
 
   @override
-  String get onBoardingDescription4 => 'Share your thoughts on the movies you\'ve watched. Dive deep into film details and help others discover great movies with your reviews.';
+  String get onBoardingDescription4 => 'شارك آرائك حول الأفلام التي شاهدتها. تعمق في تفاصيل الأفلام وساعد الآخرين في اكتشاف روائع السينما من خلال مراجعاتك.';
 
   @override
-  String get onBoardingHeader5 => 'Start Watching Now';
+  String get onBoardingHeader5 => 'ابدأ المشاهدة الآن';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get register => 'تسجيل';
+
+  @override
+  String get forgotPassword => 'نسيت كلمة المرور';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get confirmPassword => 'تأكيد كلمة المرور';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
+
+  @override
+  String get loginWithGoogle => 'تسجيل الدخول باستخدام جوجل';
+
+  @override
+  String get createAccount => 'إنشاء حساب';
+
+  @override
+  String get alreadyHaveAccount => 'هل لديك حساب بالفعل؟';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
+
+  @override
+  String get createOne => 'إنشاء واحد';
+
+  @override
+  String get avatar => 'الصورة الرمزية';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get verifyEmail => 'تحقق من البريد الإلكتروني';
+
+  @override
+  String get emptyEmailAddress => 'لا يمكن أن يكون عنوان البريد الإلكتروني فارغًا';
+
+  @override
+  String get invalidEmailAddress => 'عنوان البريد الإلكتروني غير صالح';
+
+  @override
+  String get emptyConfirmPassword => 'لا يمكن أن يكون تأكيد كلمة المرور فارغًا';
+
+  @override
+  String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
+
+  @override
+  String get emptyPassword => 'لا يمكن أن تكون كلمة المرور فارغة';
+
+  @override
+  String get emptyName => 'لا يمكن أن يكون الاسم فارغًا';
+
+  @override
+  String get emptyPhoneNumber => 'لا يمكن أن يكون رقم الهاتف فارغًا';
+
+  @override
+  String get passwordTooShort => 'يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل';
+
+  @override
+  String get accountCreated => 'تم إنشاء الحساب بنجاح';
+
+  @override
+  String get accountCreationFailed => 'فشل إنشاء الحساب';
+
+  @override
+  String get loginFailed => 'فشل تسجيل الدخول';
+
+  @override
+  String get loginSuccessful => 'تم تسجيل الدخول بنجاح';
 }
