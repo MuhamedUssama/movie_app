@@ -8,6 +8,7 @@ import 'package:movie_app_new_design/features/authentication/presentation/cubits
 import 'package:movie_app_new_design/features/authentication/presentation/screens/forget_password_screen.dart';
 import 'package:movie_app_new_design/features/authentication/presentation/screens/login_screen.dart';
 import 'package:movie_app_new_design/features/authentication/presentation/screens/register_screen.dart';
+import 'package:movie_app_new_design/features/home/cubit/home_screen_view_model.dart';
 import 'package:movie_app_new_design/features/home/home_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/intro_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/on_boarding_screen.dart';
@@ -62,7 +63,12 @@ abstract class AppRouter {
 
       case RoutesName.homeScreen:
         return MaterialPageRoute(
-          builder: (_) => const HomeScreen(),
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => HomeScreenViewModel(),
+              child: const HomeScreen(),
+            );
+          },
           settings: settings,
         );
 

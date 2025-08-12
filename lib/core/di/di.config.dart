@@ -40,6 +40,7 @@ import '../../features/authentication/presentation/cubits/login_cubit/login_view
     as _i464;
 import '../../features/authentication/presentation/cubits/register_cubit/register_view_model.dart'
     as _i181;
+import '../../features/home/cubit/home_screen_view_model.dart' as _i370;
 import '../network/network_module.dart' as _i200;
 import '../network/retrofit_client.dart' as _i74;
 
@@ -52,6 +53,7 @@ extension GetItInjectableX on _i174.GetIt {
     final gh = _i526.GetItHelper(this, environment, environmentFilter);
     final networkModule = _$NetworkModule();
     gh.factory<_i528.PrettyDioLogger>(() => networkModule.prettyDioLogger());
+    gh.factory<_i370.HomeScreenViewModel>(() => _i370.HomeScreenViewModel());
     gh.lazySingleton<_i361.Dio>(() => networkModule.provideDio());
     gh.lazySingleton<_i36.AuthRemoteDataSource>(
       () => _i446.AuthRemoteDataSourceImpl(),

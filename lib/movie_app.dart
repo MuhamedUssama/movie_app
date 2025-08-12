@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -29,9 +30,17 @@ class MovieApp extends StatelessWidget {
           supportedLocales: [Locale('en'), Locale('ar')],
           locale: Locale('en'),
           onGenerateRoute: (settings) => AppRouter.appRouter(settings),
-          initialRoute: RoutesName.introScreen,
+          initialRoute: _getInitialRoute(),
         );
       },
     );
+  }
+
+  String _getInitialRoute() {
+    if (FirebaseAuth.instance.currentUser != null) {
+      return RoutesName.homeScreen;
+    } else {
+      return RoutesName.introScreen;
+    }
   }
 }
