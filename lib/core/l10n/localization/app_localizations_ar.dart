@@ -52,4 +52,88 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get onBoardingHeader5 => 'ابدأ المشاهدة الآن';
+
+  @override
+  String get login => 'تسجيل الدخول';
+
+  @override
+  String get register => 'تسجيل';
+
+  @override
+  String get forgotPassword => 'نسيت كلمة المرور';
+
+  @override
+  String get name => 'الاسم';
+
+  @override
+  String get email => 'البريد الإلكتروني';
+
+  @override
+  String get password => 'كلمة المرور';
+
+  @override
+  String get confirmPassword => 'تأكيد كلمة المرور';
+
+  @override
+  String get phoneNumber => 'رقم الهاتف';
+
+  @override
+  String get loginWithGoogle => 'تسجيل الدخول باستخدام جوجل';
+
+  @override
+  String get createAccount => 'إنشاء حساب';
+
+  @override
+  String get alreadyHaveAccount => 'هل لديك حساب بالفعل؟';
+
+  @override
+  String get dontHaveAccount => 'ليس لديك حساب؟';
+
+  @override
+  String get createOne => 'إنشاء واحد';
+
+  @override
+  String get avatar => 'الصورة الرمزية';
+
+  @override
+  String get or => 'أو';
+
+  @override
+  String get verifyEmail => 'تحقق من البريد الإلكتروني';
+
+  @override
+  String get emptyEmailAddress => 'لا يمكن أن يكون عنوان البريد الإلكتروني فارغًا';
+
+  @override
+  String get invalidEmailAddress => 'عنوان البريد الإلكتروني غير صالح';
+
+  @override
+  String get emptyConfirmPassword => 'لا يمكن أن يكون تأكيد كلمة المرور فارغًا';
+
+  @override
+  String get passwordsDoNotMatch => 'كلمات المرور غير متطابقة';
+
+  @override
+  String get emptyPassword => 'لا يمكن أن تكون كلمة المرور فارغة';
+
+  @override
+  String get emptyName => 'لا يمكن أن يكون الاسم فارغًا';
+
+  @override
+  String get emptyPhoneNumber => 'لا يمكن أن يكون رقم الهاتف فارغًا';
+
+  @override
+  String get passwordTooShort => 'يجب أن تكون كلمة المرور مكونة من 6 أحرف على الأقل';
+
+  @override
+  String get accountCreated => 'تم إنشاء الحساب بنجاح';
+
+  @override
+  String get accountCreationFailed => 'فشل إنشاء الحساب';
+
+  @override
+  String get loginFailed => 'فشل تسجيل الدخول';
+
+  @override
+  String get loginSuccessful => 'تم تسجيل الدخول بنجاح';
 }

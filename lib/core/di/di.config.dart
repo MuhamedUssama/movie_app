@@ -34,6 +34,8 @@ import '../../features/authentication/domain/usecases/sign_out_usecase.dart'
     as _i749;
 import '../../features/authentication/domain/usecases/vreify_account_usecase.dart'
     as _i39;
+import '../../features/authentication/presentation/cubits/register_cubit/register_view_model.dart'
+    as _i181;
 import '../network/network_module.dart' as _i200;
 import '../network/retrofit_client.dart' as _i74;
 
@@ -73,6 +75,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i39.VreifyAccountUsecase>(
       () => _i39.VreifyAccountUsecase(gh<_i170.AuthRepository>()),
+    );
+    gh.factory<_i181.RegisterViewModel>(
+      () => _i181.RegisterViewModel(gh<_i257.RegisterUsecase>()),
     );
     return this;
   }

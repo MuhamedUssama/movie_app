@@ -8,8 +8,28 @@ abstract class AppImages {
   static const String onBoarding6 = '${_baseUrl}on_boarding_6.png';
 }
 
-abstract class AppSvgs {
-  static const String _baseUrl = 'assets/svgs/';
+// abstract class AppSvgs {
+//   static const String _baseUrl = 'assets/svgs/';
+// }
+
+abstract class AppIcons {
+  static const String _baseUrl = 'assets/icons/';
+  static const String name = '${_baseUrl}name.svg';
+  static const String email = '${_baseUrl}email.svg';
+  static const String password = '${_baseUrl}password.svg';
+  static const String phone = '${_baseUrl}phone.svg';
+  static const String google = '${_baseUrl}google.svg';
+  static const String home = '${_baseUrl}home.svg';
+  static const String selectedHome = '${_baseUrl}selected_home.svg';
+  static const String search = '${_baseUrl}search.svg';
+  static const String selectedSearch = '${_baseUrl}selected_search.svg';
+  static const String browse = '${_baseUrl}browse.svg';
+  static const String selectedBrowse = '${_baseUrl}selected_browse.svg';
+  static const String profile = '${_baseUrl}profile.svg';
+  static const String selectedProfile = '${_baseUrl}selected_profile.svg';
+  static const String exit = '${_baseUrl}exit.svg';
+  static const String watchList = '${_baseUrl}watch_list.svg';
+  static const String history = '${_baseUrl}history.svg';
 }
 
 abstract class AppAvatars {

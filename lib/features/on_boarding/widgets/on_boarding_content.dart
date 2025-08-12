@@ -2,6 +2,7 @@ import 'package:animate_do/animate_do.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
+import 'package:movie_app_new_design/core/routes/routes_name.dart';
 import 'package:movie_app_new_design/features/on_boarding/models/on_boarding_model.dart';
 
 class OnBoardingContent extends StatelessWidget {
@@ -60,6 +61,11 @@ class OnBoardingContent extends StatelessWidget {
                   controller.nextPage(
                     duration: const Duration(milliseconds: 300),
                     curve: Curves.easeInOut,
+                  );
+                } else {
+                  Navigator.pushReplacementNamed(
+                    context,
+                    RoutesName.registerScreen,
                   );
                 }
               },
