@@ -24,17 +24,19 @@ class LoginViewModel extends Cubit<LoginStates> {
   final TextEditingController passwordController = TextEditingController();
 
   Future<void> loginWithEmailAndPassword() async {
-    emit(const LoginLoadingState());
-    final result = await _loginWithEmailAndPasswordUsecase(
-      requestModel: LoginRequestModel(
-        email: emailController.text,
-        password: passwordController.text,
-      ),
-    );
-    result.fold(
-      (failure) => emit(LoginFaliureState(failure.message ?? 'Login failed')),
-      (success) => emit(const LoginSuccessState()),
-    );
+    if (formKey.currentState!.validate()) {
+      emit(const LoginLoadingState());
+      final result = await _loginWithEmailAndPasswordUsecase(
+        requestModel: LoginRequestModel(
+          email: emailController.text,
+          password: passwordController.text,
+        ),
+      );
+      result.fold(
+        (failure) => emit(LoginFaliureState(failure.message ?? 'Login failed')),
+        (success) => emit(const LoginSuccessState()),
+      );
+    }
   }
 
   Future<void> loginWithGoogle() async {

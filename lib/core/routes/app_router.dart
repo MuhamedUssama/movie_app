@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app_new_design/core/di/di.dart';
 import 'package:movie_app_new_design/core/routes/routes_name.dart';
+import 'package:movie_app_new_design/features/authentication/presentation/cubits/login_cubit/login_view_model.dart';
 import 'package:movie_app_new_design/features/authentication/presentation/cubits/register_cubit/register_view_model.dart';
+import 'package:movie_app_new_design/features/authentication/presentation/screens/login_screen.dart';
 import 'package:movie_app_new_design/features/authentication/presentation/screens/register_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/intro_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/on_boarding_screen.dart';
@@ -24,11 +26,23 @@ abstract class AppRouter {
 
       case RoutesName.registerScreen:
         return MaterialPageRoute(
-          builder:
-              (context) => BlocProvider(
-                create: (context) => getIt.get<RegisterViewModel>(),
-                child: const RegisterScreen(),
-              ),
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => getIt.get<RegisterViewModel>(),
+              child: const RegisterScreen(),
+            );
+          },
+          settings: settings,
+        );
+
+      case RoutesName.loginScreen:
+        return MaterialPageRoute(
+          builder: (context) {
+            return BlocProvider(
+              create: (context) => getIt.get<LoginViewModel>(),
+              child: const LoginScreen(),
+            );
+          },
           settings: settings,
         );
 

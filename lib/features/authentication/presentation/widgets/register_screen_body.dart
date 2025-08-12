@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
+import 'package:movie_app_new_design/core/routes/routes_name.dart';
 
 import '../cubits/register_cubit/register_states.dart';
 import '../cubits/register_cubit/register_view_model.dart';
@@ -48,7 +49,12 @@ class RegisterScreenBody extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(locale.alreadyHaveAccount, style: textTheme.bodyMedium),
-              TextButton(onPressed: () {}, child: Text(locale.login)),
+              TextButton(
+                onPressed: () {
+                  Navigator.pushNamed(context, RoutesName.loginScreen);
+                },
+                child: Text(locale.login),
+              ),
             ],
           ),
         ],

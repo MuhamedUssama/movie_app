@@ -1,0 +1,70 @@
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
+import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
+import 'package:movie_app_new_design/core/utils/app_assets.dart';
+
+import '../cubits/login_cubit/login_view_model.dart';
+import 'dont_have_account.dart';
+import 'login_form_fields.dart';
+import 'or_widget.dart';
+
+class LoginScreenBody extends StatelessWidget {
+  const LoginScreenBody({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    final AppLocalizations locale = AppLocalizations.of(context)!;
+    return SafeArea(
+      child: SingleChildScrollView(
+        padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 24),
+        child: Column(
+          children: [
+            AspectRatio(aspectRatio: 2.5, child: Image.asset(AppImages.logo)),
+            SizedBox(height: height * 0.07),
+            const LoginFormFields(),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.end,
+              children: [
+                TextButton(
+                  onPressed: () {},
+                  child: Text(
+                    '${locale.forgotPassword} ?',
+                    style: Theme.of(context).textTheme.bodySmall,
+                  ),
+                ),
+              ],
+            ),
+            SizedBox(height: 24.h),
+            ElevatedButton(
+              onPressed: () {
+                context.read<LoginViewModel>().loginWithEmailAndPassword();
+              },
+              child: Text(locale.login),
+            ),
+            const SizedBox(height: 16),
+            const DontHaveAccount(),
+            SizedBox(height: 8.h),
+            const ORWidget(),
+            SizedBox(height: 24.h),
+            ElevatedButton(
+              onPressed: () {
+                context.read<LoginViewModel>().loginWithGoogle();
+              },
+              child: Row(
+                spacing: 12.w,
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(AppIcons.google, fit: BoxFit.scaleDown),
+                  Text(locale.loginWithGoogle),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}

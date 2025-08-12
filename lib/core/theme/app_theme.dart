@@ -25,11 +25,23 @@ abstract class AppTheme {
           fontSize: 24.sp,
           fontWeight: FontWeight.w700,
         ),
+        bodySmall: GoogleFonts.roboto(
+          color: colorScheme.primary,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+        ),
         labelMedium: GoogleFonts.roboto(
           color: colorScheme.onSecondary,
           fontSize: 16.sp,
           fontWeight: FontWeight.w500,
         ),
+      ),
+
+      dividerColor: colorScheme.primary,
+      dividerTheme: DividerThemeData(
+        color: colorScheme.primary,
+        thickness: 1.w,
+        space: 16.h,
       ),
 
       appBarTheme: AppBarTheme(
