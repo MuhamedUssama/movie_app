@@ -42,10 +42,7 @@ class RegisterScreen extends StatelessWidget {
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.BOTTOM,
             );
-            Future.delayed(const Duration(seconds: 3), () {
-              // ignore: use_build_context_synchronously
-              Navigator.pushNamed(context, RoutesName.loginScreen);
-            });
+            Navigator.pushNamed(context, RoutesName.loginScreen);
           } else if (state is VerifyAccountFailureState) {
             Fluttertoast.showToast(
               msg: state.message,

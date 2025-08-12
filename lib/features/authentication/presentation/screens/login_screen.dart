@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
+import 'package:movie_app_new_design/core/routes/routes_name.dart';
 
 import '../cubits/login_cubit/login_states.dart';
 import '../cubits/login_cubit/login_view_model.dart';
@@ -25,6 +26,9 @@ class LoginScreen extends StatelessWidget {
               toastLength: Toast.LENGTH_SHORT,
               gravity: ToastGravity.BOTTOM,
             );
+            Navigator.of(
+              context,
+            ).pushNamedAndRemoveUntil(RoutesName.homeScreen, (route) => false);
           } else if (state is LoginFaliureState) {
             Fluttertoast.showToast(
               msg: state.message,

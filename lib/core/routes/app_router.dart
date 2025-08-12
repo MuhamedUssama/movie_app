@@ -8,6 +8,7 @@ import 'package:movie_app_new_design/features/authentication/presentation/cubits
 import 'package:movie_app_new_design/features/authentication/presentation/screens/forget_password_screen.dart';
 import 'package:movie_app_new_design/features/authentication/presentation/screens/login_screen.dart';
 import 'package:movie_app_new_design/features/authentication/presentation/screens/register_screen.dart';
+import 'package:movie_app_new_design/features/home/home_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/intro_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/on_boarding_screen.dart';
 
@@ -56,6 +57,12 @@ abstract class AppRouter {
               child: const ForgetPasswordScreen(),
             );
           },
+          settings: settings,
+        );
+
+      case RoutesName.homeScreen:
+        return MaterialPageRoute(
+          builder: (_) => const HomeScreen(),
           settings: settings,
         );
 
