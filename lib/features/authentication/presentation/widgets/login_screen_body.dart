@@ -4,6 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:movie_app_new_design/core/l10n/localization/app_localizations.dart';
+import 'package:movie_app_new_design/core/routes/routes_name.dart';
 import 'package:movie_app_new_design/core/utils/app_assets.dart';
 
 import '../cubits/login_cubit/login_states.dart';
@@ -31,7 +32,12 @@ class LoginScreenBody extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.end,
               children: [
                 TextButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    Navigator.pushNamed(
+                      context,
+                      RoutesName.forgotPasswordScreen,
+                    );
+                  },
                   child: Text(
                     '${locale.forgotPassword} ?',
                     style: Theme.of(context).textTheme.bodySmall,
