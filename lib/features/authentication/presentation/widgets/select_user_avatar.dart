@@ -1,7 +1,7 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:movie_app_new_design/core/models/avatars_model.dart';
+import 'package:movie_app_new_design/core/models/avarats/avatars_model.dart';
 import 'package:movie_app_new_design/features/authentication/presentation/cubits/register_cubit/register_view_model.dart';
 
 class SelectUserAvatar extends StatelessWidget {

@@ -41,6 +41,19 @@ import '../../features/authentication/presentation/cubits/login_cubit/login_view
 import '../../features/authentication/presentation/cubits/register_cubit/register_view_model.dart'
     as _i181;
 import '../../features/home/cubit/home_screen_view_model.dart' as _i370;
+import '../../features/home/tabs/home_tab/data/data_sorces/remote/home_tab_remote_data_source.dart'
+    as _i359;
+import '../../features/home/tabs/home_tab/data/data_sorces/remote/home_tab_remote_data_source_impl.dart'
+    as _i1010;
+import '../../features/home/tabs/home_tab/data/repository_impl/home_tab_repository_impl.dart'
+    as _i370;
+import '../../features/home/tabs/home_tab/domain/repository/home_tab_repository.dart'
+    as _i276;
+import '../../features/home/tabs/home_tab/domain/usecases/get_movies_by_date.dart'
+    as _i401;
+import '../../features/home/tabs/home_tab/domain/usecases/get_movies_by_random_genre.dart'
+    as _i993;
+import '../network/error_handler.dart' as _i925;
 import '../network/network_module.dart' as _i200;
 import '../network/retrofit_client.dart' as _i74;
 
@@ -54,15 +67,29 @@ extension GetItInjectableX on _i174.GetIt {
     final networkModule = _$NetworkModule();
     gh.factory<_i528.PrettyDioLogger>(() => networkModule.prettyDioLogger());
     gh.factory<_i370.HomeScreenViewModel>(() => _i370.HomeScreenViewModel());
-    gh.lazySingleton<_i361.Dio>(() => networkModule.provideDio());
+    gh.factory<_i925.ErrorHandlingInterceptor>(
+      () => _i925.ErrorHandlingInterceptor(),
+    );
     gh.lazySingleton<_i36.AuthRemoteDataSource>(
       () => _i446.AuthRemoteDataSourceImpl(),
+    );
+    gh.lazySingleton<_i361.Dio>(
+      () => networkModule.provideDio(
+        gh<_i528.PrettyDioLogger>(),
+        gh<_i925.ErrorHandlingInterceptor>(),
+      ),
     );
     gh.singleton<_i74.RetrofitClient>(
       () => _i74.RetrofitClient(gh<_i361.Dio>()),
     );
+    gh.lazySingleton<_i359.HomeTabRemoteDataSource>(
+      () => _i1010.HomeTabRemoteDataSourceImpl(gh<_i74.RetrofitClient>()),
+    );
     gh.factory<_i170.AuthRepository>(
       () => _i576.AuthRepositoryImpl(gh<_i36.AuthRemoteDataSource>()),
+    );
+    gh.factory<_i276.HomeTabRepository>(
+      () => _i370.HomeTabRepositoryImpl(gh<_i359.HomeTabRemoteDataSource>()),
     );
     gh.factory<_i25.ForgetPasswordUsecase>(
       () => _i25.ForgetPasswordUsecase(gh<_i170.AuthRepository>()),
@@ -96,6 +123,12 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i599.LoginWithEmailAndPasswordUsecase>(),
         gh<_i70.LoginWithGoogleUsecase>(),
       ),
+    );
+    gh.factory<_i993.GetMoviesByRandomGenre>(
+      () => _i993.GetMoviesByRandomGenre(gh<_i276.HomeTabRepository>()),
+    );
+    gh.factory<_i401.GetMoviesByDate>(
+      () => _i401.GetMoviesByDate(gh<_i276.HomeTabRepository>()),
     );
     return this;
   }
