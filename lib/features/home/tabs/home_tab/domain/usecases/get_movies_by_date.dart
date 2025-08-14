@@ -13,7 +13,7 @@ class GetMoviesByDate {
   const GetMoviesByDate(this._repository);
 
   Future<Either<ServerException, Movie>> call() async {
-    final MoviesListParams params = MoviesListParams(genre: 'year');
+    final MoviesListParams params = MoviesListParams(sortBy: 'year');
     return _repository.getMoviesList(params);
   }
 }

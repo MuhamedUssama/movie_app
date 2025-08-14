@@ -53,6 +53,8 @@ import '../../features/home/tabs/home_tab/domain/usecases/get_movies_by_date.dar
     as _i401;
 import '../../features/home/tabs/home_tab/domain/usecases/get_movies_by_random_genre.dart'
     as _i993;
+import '../../features/home/tabs/home_tab/presentation/cubit/home_tab_view_model.dart'
+    as _i841;
 import '../network/error_handler.dart' as _i925;
 import '../network/network_module.dart' as _i200;
 import '../network/retrofit_client.dart' as _i74;
@@ -129,6 +131,12 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i401.GetMoviesByDate>(
       () => _i401.GetMoviesByDate(gh<_i276.HomeTabRepository>()),
+    );
+    gh.factory<_i841.HomeTabViewModel>(
+      () => _i841.HomeTabViewModel(
+        gh<_i401.GetMoviesByDate>(),
+        gh<_i993.GetMoviesByRandomGenre>(),
+      ),
     );
     return this;
   }
