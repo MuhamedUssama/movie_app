@@ -1,5 +1,7 @@
 import 'dart:convert';
 
+import 'package:carousel_slider/carousel_controller.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
@@ -15,9 +17,36 @@ class HomeTabViewModel extends Cubit<HomeTabStates> {
 
   @factoryMethod
   HomeTabViewModel(this._moviesByDate, this._moviesByRandomGenre)
-    : super(const HomeTabInitialState());
+    : super(const HomeTabInitialState()) {
+    topCarouselController = CarouselSliderController();
+    bottomCarouselController = CarouselSliderController();
+    getMoviesByDate();
+    // getMoviesByRandomGenre();
+  }
 
   static List<String> _cachedGenres = [];
+  int currentIndex = 0;
+
+  late CarouselSliderController topCarouselController;
+  late CarouselSliderController bottomCarouselController;
+
+  void changeMovieCardIndex(int index) {
+    currentIndex = index;
+
+    topCarouselController.animateToPage(
+      currentIndex,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+
+    bottomCarouselController.animateToPage(
+      currentIndex,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
+
+    emit(ChangeMovieCard(currentIndex));
+  }
 
   Future<void> getMoviesByDate() async {
     emit(const LastMoviesLoadingState());

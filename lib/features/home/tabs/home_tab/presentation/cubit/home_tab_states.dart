@@ -23,6 +23,11 @@ class LastMoviesFaliureState extends HomeTabStates {
   const LastMoviesFaliureState(this.message);
 }
 
+class ChangeMovieCard extends HomeTabStates {
+  final int index;
+  const ChangeMovieCard(this.index);
+}
+
 class MoviesByGenereLoadingState extends HomeTabStates {
   const MoviesByGenereLoadingState();
 }

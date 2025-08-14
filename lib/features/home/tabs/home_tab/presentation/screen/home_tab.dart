@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app_new_design/core/di/di.dart';
 
 import '../cubit/home_tab_view_model.dart';
+import '../widgets/last_movies_widget.dart';
 
 class HomeTab extends StatelessWidget {
   const HomeTab({super.key});
@@ -11,7 +12,12 @@ class HomeTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt.get<HomeTabViewModel>(),
-      child: const Placeholder(color: Colors.red),
+      child: CustomScrollView(
+        slivers: <Widget>[
+          LastMoviesWidget(),
+          SliverToBoxAdapter(child: Text('Action')),
+        ],
+      ),
     );
   }
 }
