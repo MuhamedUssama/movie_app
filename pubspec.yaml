@@ -63,3 +63,4 @@ flutter:
     - assets/svgs/
     - assets/avatars/
     - assets/icons/
+    - assets/genres.json
