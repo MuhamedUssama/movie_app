@@ -19,6 +19,7 @@ class BottomCarouselSlider extends StatelessWidget {
       itemCount: movies.length,
       itemBuilder: (context, index, realIndex) {
         return CachedNetworkImage(
+          width: double.infinity,
           imageUrl:
               movies[index].largeCoverImage ?? NetworkImages.noImageAvailable,
           fit: BoxFit.cover,

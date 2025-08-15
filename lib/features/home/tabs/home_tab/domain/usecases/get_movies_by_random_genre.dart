@@ -13,8 +13,7 @@ class GetMoviesByRandomGenre {
   @factoryMethod
   const GetMoviesByRandomGenre(this._repository);
 
-  Future<Either<ServerException, Movie>> call(List<String> genres) async {
-    final String randomGenre = (genres..shuffle()).first;
+  Future<Either<ServerException, Movie>> call(String randomGenre) async {
     final MoviesListParams params = MoviesListParams(genre: randomGenre);
     return _repository.getMoviesList(params);
   }

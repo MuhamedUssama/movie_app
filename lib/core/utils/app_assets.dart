@@ -38,6 +38,7 @@ abstract class AppIcons {
   static const String favorite = '${_baseUrl}favorite.svg';
   static const String watch = '${_baseUrl}watch.svg';
   static const String star = '${_baseUrl}star.svg';
+  static const String arrowForward = '${_baseUrl}arrow_forward.svg';
 }
 
 abstract class AppAvatars {

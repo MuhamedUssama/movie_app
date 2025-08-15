@@ -136,4 +136,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get loginSuccessful => 'Login successful';
+
+  @override
+  String get seeMore => 'See More';
 }

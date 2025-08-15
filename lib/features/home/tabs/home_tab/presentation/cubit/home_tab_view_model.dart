@@ -1,4 +1,5 @@
 import 'dart:convert';
+import 'dart:developer';
 
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:flutter/material.dart';
@@ -21,10 +22,11 @@ class HomeTabViewModel extends Cubit<HomeTabStates> {
     topCarouselController = CarouselSliderController();
     bottomCarouselController = CarouselSliderController();
     getMoviesByDate();
-    // getMoviesByRandomGenre();
+    getMoviesByRandomGenre();
   }
 
   static List<String> _cachedGenres = [];
+  String randomGenre = '';
   int currentIndex = 0;
 
   late CarouselSliderController topCarouselController;
@@ -83,7 +85,11 @@ class HomeTabViewModel extends Cubit<HomeTabStates> {
 
     List<String> genres = await _loadGenres();
 
-    final result = await _moviesByRandomGenre.call(genres);
+    randomGenre = (genres..shuffle()).first;
+
+    log('randomGenre: $randomGenre');
+
+    final result = await _moviesByRandomGenre.call(randomGenre);
 
     result.fold(
       (error) {

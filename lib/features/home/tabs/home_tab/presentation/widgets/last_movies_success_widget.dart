@@ -15,7 +15,7 @@ class LastMoviesSuccessWidget extends StatelessWidget {
     return Stack(
       children: [
         SizedBox(
-          height: MediaQuery.sizeOf(context).height * 0.68,
+          height: MediaQuery.sizeOf(context).height * 0.63,
           width: double.infinity,
           child: BottomCarouselSlider(movies: movies),
         ),
@@ -42,7 +42,7 @@ class LastMoviesSuccessWidget extends StatelessWidget {
               child: Image.asset(
                 AppImages.availableNow,
                 fit: BoxFit.cover,
-                width: MediaQuery.sizeOf(context).width * .5,
+                width: MediaQuery.sizeOf(context).width * .42,
               ),
             ),
           ),
@@ -59,7 +59,7 @@ class LastMoviesSuccessWidget extends StatelessWidget {
             child: Image.asset(
               AppImages.watchNow,
               fit: BoxFit.cover,
-              width: MediaQuery.sizeOf(context).width * .8,
+              width: MediaQuery.sizeOf(context).width * .7,
             ),
           ),
         ),

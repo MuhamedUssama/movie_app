@@ -136,4 +136,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get loginSuccessful => 'تم تسجيل الدخول بنجاح';
+
+  @override
+  String get seeMore => 'المزيد';
 }
