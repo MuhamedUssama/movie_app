@@ -8,6 +8,8 @@ abstract class AppImages {
   static const String onBoarding4 = '${_baseUrl}on_boarding_4.png';
   static const String onBoarding5 = '${_baseUrl}on_boarding_5.png';
   static const String onBoarding6 = '${_baseUrl}on_boarding_6.png';
+  static const String availableNow = '${_baseUrl}available_now.png';
+  static const String watchNow = '${_baseUrl}watch_now.png';
 }
 
 abstract class AppSvgs {
@@ -33,6 +35,10 @@ abstract class AppIcons {
   static const String exit = '${_baseUrl}exit.svg';
   static const String watchList = '${_baseUrl}watch_list.svg';
   static const String history = '${_baseUrl}history.svg';
+  static const String favorite = '${_baseUrl}favorite.svg';
+  static const String watch = '${_baseUrl}watch.svg';
+  static const String star = '${_baseUrl}star.svg';
+  static const String arrowForward = '${_baseUrl}arrow_forward.svg';
 }
 
 abstract class AppAvatars {
@@ -46,4 +52,9 @@ abstract class AppAvatars {
   static const String avatar7 = '${_baseUrl}avatar_7.png';
   static const String avatar8 = '${_baseUrl}avatar_8.png';
   static const String avatar9 = '${_baseUrl}avatar_9.png';
+}
+
+abstract class NetworkImages {
+  static const String noImageAvailable =
+      'https://www.mountainmotorvehicles.co.uk/no-image-available-2-7/';
 }

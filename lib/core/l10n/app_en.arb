@@ -41,5 +41,6 @@
   "accountCreated": "Account created successfully",
   "accountCreationFailed": "Account creation failed",
   "loginFailed": "Login failed",
-  "loginSuccessful": "Login successful"
+  "loginSuccessful": "Login successful",
+  "seeMore": "See More"
 }

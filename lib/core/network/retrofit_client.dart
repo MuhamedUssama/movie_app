@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
 import 'package:injectable/injectable.dart';
+import 'package:movie_app_new_design/core/models/movies/movie_model.dart';
 import 'package:movie_app_new_design/core/network/end_points.dart';
 import 'package:retrofit/http.dart';
 import 'package:retrofit/error_logger.dart';
@@ -12,4 +13,7 @@ part 'retrofit_client.g.dart';
 abstract class RetrofitClient {
   @factoryMethod
   factory RetrofitClient(Dio dio) = _RetrofitClient;
+
+  @GET(EndPoints.listMovies)
+  Future<Movie> getMoviesList(@Queries() Map<String, dynamic> query);
 }

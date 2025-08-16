@@ -41,5 +41,6 @@
   "accountCreated": "تم إنشاء الحساب بنجاح",
   "accountCreationFailed": "فشل إنشاء الحساب",
   "loginFailed": "فشل تسجيل الدخول",
-  "loginSuccessful": "تم تسجيل الدخول بنجاح"
+  "loginSuccessful": "تم تسجيل الدخول بنجاح",
+  "seeMore": "المزيد"
 }

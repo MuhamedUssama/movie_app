@@ -1,17 +1,21 @@
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
-import 'package:movie_app_new_design/core/di/di.dart';
+import 'package:movie_app_new_design/core/network/error_handler.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 @module
 abstract class NetworkModule {
   @lazySingleton
-  Dio provideDio() {
+  Dio provideDio(
+    PrettyDioLogger logger,
+    ErrorHandlingInterceptor errorInterceptor,
+  ) {
     Dio dio = Dio();
 
     dio.options.connectTimeout = const Duration(seconds: 30);
     dio.options.receiveTimeout = const Duration(seconds: 30);
-    dio.interceptors.add(getIt<PrettyDioLogger>());
+
+    dio.interceptors.addAll([logger, errorInterceptor]);
 
     return dio;
   }
