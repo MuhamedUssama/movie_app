@@ -4,6 +4,7 @@ import 'package:movie_app_new_design/features/home/tabs/home_tab/presentation/cu
 import 'package:movie_app_new_design/features/home/tabs/home_tab/presentation/cubit/home_tab_view_model.dart';
 
 import 'last_movies_success_widget.dart';
+import 'shimmer_last_movies_widget.dart';
 
 class LastMoviesWidget extends StatelessWidget {
   const LastMoviesWidget({super.key});
@@ -19,13 +20,13 @@ class LastMoviesWidget extends StatelessWidget {
                 current is LastMoviesSuccessState,
         builder: (context, state) {
           if (state is LastMoviesLoadingState) {
-            return Center(child: CircularProgressIndicator());
+            return const ShimmerLastMoviesWidget();
           } else if (state is LastMoviesFaliureState) {
             return Center(child: Text(state.message));
           } else if (state is LastMoviesSuccessState) {
             return LastMoviesSuccessWidget(movies: state.movies);
           } else {
-            return Center(child: CircularProgressIndicator());
+            return const ShimmerLastMoviesWidget();
           }
         },
       ),

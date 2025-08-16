@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:movie_app_new_design/core/utils/app_assets.dart';
+import 'package:shimmer/shimmer.dart';
 
 class MovieCard extends StatelessWidget {
   final String rating;
@@ -19,8 +20,7 @@ class MovieCard extends StatelessWidget {
             child: CachedNetworkImage(
               imageUrl: imagePath ?? NetworkImages.noImageAvailable,
               fit: BoxFit.cover,
-              placeholder:
-                  (context, url) => Center(child: CircularProgressIndicator()),
+              placeholder: (context, url) => const CardPlaceHolder(),
               errorWidget: (context, url, error) => Icon(Icons.error),
             ),
           ),
@@ -46,6 +46,22 @@ class MovieCard extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class CardPlaceHolder extends StatelessWidget {
+  const CardPlaceHolder({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Shimmer.fromColors(
+      baseColor: Colors.grey[900]!,
+      highlightColor: Colors.grey[800]!,
+      child: ClipRRect(
+        borderRadius: BorderRadius.circular(16.r),
+        child: Container(color: Colors.grey[900]),
       ),
     );
   }
