@@ -45,4 +45,6 @@ class Torrent {
 
   factory Torrent.fromJson(Map<String, dynamic> json) =>
       _$TorrentFromJson(json);
+
+  Map<String, dynamic> toJson() => _$TorrentToJson(this);
 }
