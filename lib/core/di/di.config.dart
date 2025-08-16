@@ -55,6 +55,16 @@ import '../../features/home/tabs/home_tab/domain/usecases/get_movies_by_random_g
     as _i993;
 import '../../features/home/tabs/home_tab/presentation/cubit/home_tab_view_model.dart'
     as _i841;
+import '../../features/movie_details/data/data_sources/movie_deatils_data_source.dart'
+    as _i37;
+import '../../features/movie_details/data/data_sources/movie_details_data_source_impl.dart'
+    as _i1031;
+import '../../features/movie_details/data/repository_impl/movie_details_repository_impl.dart'
+    as _i476;
+import '../../features/movie_details/domain/repository/movie_details_repository.dart'
+    as _i431;
+import '../../features/movie_details/domain/usecases/get_movie_details_usecase.dart'
+    as _i124;
 import '../network/error_handler.dart' as _i925;
 import '../network/network_module.dart' as _i200;
 import '../network/retrofit_client.dart' as _i74;
@@ -117,8 +127,14 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i39.VreifyAccountUsecase>(),
       ),
     );
+    gh.lazySingleton<_i37.MovieDeatilsDataSource>(
+      () => _i1031.MovieDetailsDataSourceImpl(gh<_i74.RetrofitClient>()),
+    );
     gh.factory<_i77.ForgetPasswordViewModel>(
       () => _i77.ForgetPasswordViewModel(gh<_i25.ForgetPasswordUsecase>()),
+    );
+    gh.factory<_i431.MovieDetailsRepository>(
+      () => _i476.MovieDetailsRepositoryImpl(gh<_i37.MovieDeatilsDataSource>()),
     );
     gh.factory<_i464.LoginViewModel>(
       () => _i464.LoginViewModel(
@@ -137,6 +153,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i401.GetMoviesByDate>(),
         gh<_i993.GetMoviesByRandomGenre>(),
       ),
+    );
+    gh.factory<_i124.GetMovieDetailsUsecase>(
+      () => _i124.GetMovieDetailsUsecase(gh<_i431.MovieDetailsRepository>()),
     );
     return this;
   }
