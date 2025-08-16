@@ -9,6 +9,7 @@ import 'package:movie_app_new_design/features/movie_details/domain/repository/mo
 class GetMovieDetailsUsecase {
   final MovieDetailsRepository _repository;
 
+  @factoryMethod
   const GetMovieDetailsUsecase(this._repository);
 
   Future<Either<ServerException, MovieDetails>> call(

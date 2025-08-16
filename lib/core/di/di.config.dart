@@ -65,6 +65,8 @@ import '../../features/movie_details/domain/repository/movie_details_repository.
     as _i431;
 import '../../features/movie_details/domain/usecases/get_movie_details_usecase.dart'
     as _i124;
+import '../../features/movie_details/domain/usecases/get_similar_movies_usecase.dart'
+    as _i1062;
 import '../network/error_handler.dart' as _i925;
 import '../network/network_module.dart' as _i200;
 import '../network/retrofit_client.dart' as _i74;
@@ -156,6 +158,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i124.GetMovieDetailsUsecase>(
       () => _i124.GetMovieDetailsUsecase(gh<_i431.MovieDetailsRepository>()),
+    );
+    gh.factory<_i1062.GetSimilarMoviesUsecase>(
+      () => _i1062.GetSimilarMoviesUsecase(gh<_i431.MovieDetailsRepository>()),
     );
     return this;
   }
