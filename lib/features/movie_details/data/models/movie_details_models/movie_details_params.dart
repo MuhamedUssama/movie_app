@@ -1,5 +1,5 @@
 class MovieDetailsParams {
-  final String movieId;
+  final int movieId;
   final bool withImages;
   final bool withCast;
 
