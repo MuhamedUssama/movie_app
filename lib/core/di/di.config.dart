@@ -65,6 +65,8 @@ import '../../features/home/tabs/search_tab/domain/repository/search_tab_reposit
     as _i658;
 import '../../features/home/tabs/search_tab/domain/usecases/search_usecase.dart'
     as _i645;
+import '../../features/home/tabs/search_tab/presentation/cubit/search_tab_view_model.dart'
+    as _i1052;
 import '../../features/movie_details/data/data_sources/movie_deatils_data_source.dart'
     as _i37;
 import '../../features/movie_details/data/data_sources/movie_details_data_source_impl.dart'
@@ -176,6 +178,9 @@ extension GetItInjectableX on _i174.GetIt {
         gh<_i401.GetMoviesByDate>(),
         gh<_i993.GetMoviesByRandomGenre>(),
       ),
+    );
+    gh.factory<_i1052.SearchTabViewModel>(
+      () => _i1052.SearchTabViewModel(gh<_i645.SearchUsecase>()),
     );
     gh.factory<_i124.GetMovieDetailsUsecase>(
       () => _i124.GetMovieDetailsUsecase(gh<_i431.MovieDetailsRepository>()),
