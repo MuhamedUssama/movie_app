@@ -21,6 +21,7 @@ class TopCarouselSlider extends StatelessWidget {
         return MovieCard(
           imagePath: movies[index].largeCoverImage,
           rating: movies[index].rating.toString(),
+          movieId: movies[index].id ?? 15,
         );
       },
       options: CarouselOptions(

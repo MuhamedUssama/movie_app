@@ -45,6 +45,7 @@ class MoviesByGenreList extends StatelessWidget {
                     child: MovieCard(
                       imagePath: movie?.largeCoverImage ?? '',
                       rating: movie?.rating.toString() ?? '',
+                      movieId: movie?.id ?? 15,
                     ),
                   );
                 },

@@ -42,5 +42,11 @@
   "accountCreationFailed": "Account creation failed",
   "loginFailed": "Login failed",
   "loginSuccessful": "Login successful",
-  "seeMore": "See More"
+  "seeMore": "See More",
+  "watch": "Watch",
+  "screenShots": "Screen Shots",
+  "similar": "Similar",
+  "summary": "Summary",
+  "cast": "Cast",
+  "genres": "Genres"
 }

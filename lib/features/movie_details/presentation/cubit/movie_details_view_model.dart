@@ -16,9 +16,9 @@ class MovieDetailsViewModel extends Cubit<MovieDetailsStates> {
   MovieDetailsViewModel(this._movieDetailsUsecase, this._similarMoviesUsecase)
     : super(const MovieDetailsScreenInitialState());
 
-  final int movieId = 0;
+  late int movieId;
 
-  Future<void> getMovieDetails() async {
+  Future<void> getMovieDetails(int movieId) async {
     emit(const MovieDetailsLoadingState());
     final MovieDetailsParams params = MovieDetailsParams(movieId: movieId);
     final result = await _movieDetailsUsecase(params);
@@ -33,7 +33,7 @@ class MovieDetailsViewModel extends Cubit<MovieDetailsStates> {
     );
   }
 
-  Future<void> getSimilarMovies() async {
+  Future<void> getSimilarMovies(int movieId) async {
     emit(const SimilarMoviesLoadingState());
 
     final SimilarMoviesParames params = SimilarMoviesParames(movieId);

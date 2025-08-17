@@ -139,4 +139,22 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get seeMore => 'المزيد';
+
+  @override
+  String get watch => 'شاهد';
+
+  @override
+  String get screenShots => 'لقطات من الفيلم';
+
+  @override
+  String get similar => 'الافلام المشابهة';
+
+  @override
+  String get summary => 'ملخص';
+
+  @override
+  String get cast => 'طاقم الممثلين';
+
+  @override
+  String get genres => 'التصنيفات';
 }
