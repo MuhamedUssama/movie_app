@@ -8,6 +8,7 @@ class CustomTextField extends StatefulWidget {
   final Widget prefixIcon;
   final TextInputAction textInputAction;
   final String? Function(String?)? validator;
+  final void Function(String)? onChanged;
 
   const CustomTextField({
     super.key,
@@ -18,6 +19,7 @@ class CustomTextField extends StatefulWidget {
     required this.textInputAction,
     required this.prefixIcon,
     this.validator,
+    this.onChanged,
   });
 
   @override
@@ -37,6 +39,7 @@ class _CustomTextFieldState extends State<CustomTextField> {
       keyboardType: widget.keyboardType,
       obscureText: obscureText,
       textInputAction: widget.textInputAction,
+      onChanged: widget.onChanged,
       validator: widget.validator,
       autovalidateMode: AutovalidateMode.onUserInteraction,
       style: Theme.of(context).textTheme.labelMedium,

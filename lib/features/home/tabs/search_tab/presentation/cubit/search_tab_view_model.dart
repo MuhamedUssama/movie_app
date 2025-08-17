@@ -14,13 +14,13 @@ class SearchTabViewModel extends Cubit<SearchTabStates> {
 
   final TextEditingController controller = TextEditingController();
 
-  Future<void> search() async {
+  Future<void> search(String query) async {
     if (controller.text.isEmpty) {
       emit(const SearchTabEmptyState());
     }
     emit(const SearchTabLoadingState());
 
-    SearchParams params = SearchParams(query: controller.text);
+    SearchParams params = SearchParams(query: query);
     final result = await _usecase.call(params);
 
     result.fold(

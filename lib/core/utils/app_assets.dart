@@ -56,7 +56,10 @@ abstract class AppAvatars {
 
 abstract class LottieAnimations {
   static const String _baseUrl = 'assets/lottie/';
-  static const String popcorn = '${_baseUrl}popcorn.json';
+  static const String waiting = '${_baseUrl}waiting.json';
+  static const String error = '${_baseUrl}error.json';
+  static const String noInternetConnection =
+      '${_baseUrl}no_internet_connection.json';
 }
 
 abstract class NetworkImages {
