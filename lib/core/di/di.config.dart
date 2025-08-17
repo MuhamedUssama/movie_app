@@ -55,6 +55,16 @@ import '../../features/home/tabs/home_tab/domain/usecases/get_movies_by_random_g
     as _i993;
 import '../../features/home/tabs/home_tab/presentation/cubit/home_tab_view_model.dart'
     as _i841;
+import '../../features/home/tabs/search_tab/data/data_sorces/search_tab_data_source.dart'
+    as _i641;
+import '../../features/home/tabs/search_tab/data/data_sorces/search_tab_data_source_impl.dart'
+    as _i264;
+import '../../features/home/tabs/search_tab/data/repository_impl/search_tab_repository_impl.dart'
+    as _i534;
+import '../../features/home/tabs/search_tab/domain/repository/search_tab_repository.dart'
+    as _i658;
+import '../../features/home/tabs/search_tab/domain/usecases/search_usecase.dart'
+    as _i645;
 import '../../features/movie_details/data/data_sources/movie_deatils_data_source.dart'
     as _i37;
 import '../../features/movie_details/data/data_sources/movie_details_data_source_impl.dart'
@@ -101,8 +111,14 @@ extension GetItInjectableX on _i174.GetIt {
     gh.lazySingleton<_i359.HomeTabRemoteDataSource>(
       () => _i1010.HomeTabRemoteDataSourceImpl(gh<_i74.RetrofitClient>()),
     );
+    gh.lazySingleton<_i641.SearchTabDataSource>(
+      () => _i264.SearchTabDataSourceImpl(gh<_i74.RetrofitClient>()),
+    );
     gh.factory<_i170.AuthRepository>(
       () => _i576.AuthRepositoryImpl(gh<_i36.AuthRemoteDataSource>()),
+    );
+    gh.factory<_i658.SearchTabRepository>(
+      () => _i534.SearchTabRepositoryImpl(gh<_i641.SearchTabDataSource>()),
     );
     gh.factory<_i276.HomeTabRepository>(
       () => _i370.HomeTabRepositoryImpl(gh<_i359.HomeTabRemoteDataSource>()),
@@ -136,6 +152,9 @@ extension GetItInjectableX on _i174.GetIt {
     );
     gh.factory<_i77.ForgetPasswordViewModel>(
       () => _i77.ForgetPasswordViewModel(gh<_i25.ForgetPasswordUsecase>()),
+    );
+    gh.factory<_i645.SearchUsecase>(
+      () => _i645.SearchUsecase(gh<_i658.SearchTabRepository>()),
     );
     gh.factory<_i431.MovieDetailsRepository>(
       () => _i476.MovieDetailsRepositoryImpl(gh<_i37.MovieDeatilsDataSource>()),
