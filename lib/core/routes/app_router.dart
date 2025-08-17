@@ -10,6 +10,8 @@ import 'package:movie_app_new_design/features/authentication/presentation/screen
 import 'package:movie_app_new_design/features/authentication/presentation/screens/register_screen.dart';
 import 'package:movie_app_new_design/features/home/cubit/home_screen_view_model.dart';
 import 'package:movie_app_new_design/features/home/home_screen.dart';
+import 'package:movie_app_new_design/features/movie_details/presentation/cubit/movie_details_view_model.dart';
+import 'package:movie_app_new_design/features/movie_details/presentation/screens/movie_details_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/intro_screen.dart';
 import 'package:movie_app_new_design/features/on_boarding/on_boarding_screen.dart';
 
@@ -65,8 +67,19 @@ abstract class AppRouter {
         return MaterialPageRoute(
           builder: (_) {
             return BlocProvider(
-              create: (context) => HomeScreenViewModel(),
+              create: (context) => getIt.get<HomeScreenViewModel>(),
               child: const HomeScreen(),
+            );
+          },
+          settings: settings,
+        );
+
+      case RoutesName.movieDetailsScreen:
+        return MaterialPageRoute(
+          builder: (_) {
+            return BlocProvider(
+              create: (context) => getIt.get<MovieDetailsViewModel>(),
+              child: const MovieDetailsScreen(),
             );
           },
           settings: settings,

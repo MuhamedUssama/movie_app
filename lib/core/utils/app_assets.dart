@@ -56,5 +56,5 @@ abstract class AppAvatars {
 
 abstract class NetworkImages {
   static const String noImageAvailable =
-      'https://www.mountainmotorvehicles.co.uk/no-image-available-2-7/';
+      'https://www.mountainmotorvehicles.co.uk/wp-content/uploads/2024/05/No-image-available-2.jpg';
 }

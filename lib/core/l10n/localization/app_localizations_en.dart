@@ -139,4 +139,22 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get seeMore => 'See More';
+
+  @override
+  String get watch => 'Watch';
+
+  @override
+  String get screenShots => 'Screen Shots';
+
+  @override
+  String get similar => 'Similar';
+
+  @override
+  String get summary => 'Summary';
+
+  @override
+  String get cast => 'Cast';
+
+  @override
+  String get genres => 'Genres';
 }

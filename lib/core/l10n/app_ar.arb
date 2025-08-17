@@ -42,5 +42,11 @@
   "accountCreationFailed": "فشل إنشاء الحساب",
   "loginFailed": "فشل تسجيل الدخول",
   "loginSuccessful": "تم تسجيل الدخول بنجاح",
-  "seeMore": "المزيد"
+  "seeMore": "المزيد",
+  "watch": "شاهد",
+  "screenShots": "لقطات من الفيلم",
+  "similar": "الافلام المشابهة",
+  "summary": "ملخص",
+  "cast": "طاقم الممثلين",
+  "genres": "التصنيفات"
 }

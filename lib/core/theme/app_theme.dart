@@ -20,15 +20,30 @@ abstract class AppTheme {
           fontSize: 16.sp,
           fontWeight: FontWeight.w400,
         ),
+        bodySmall: GoogleFonts.roboto(
+          color: colorScheme.primary,
+          fontSize: 14.sp,
+          fontWeight: FontWeight.w400,
+        ),
         titleLarge: GoogleFonts.inter(
           color: colorScheme.onSurface,
           fontSize: 24.sp,
           fontWeight: FontWeight.w700,
         ),
-        bodySmall: GoogleFonts.roboto(
-          color: colorScheme.primary,
-          fontSize: 14.sp,
-          fontWeight: FontWeight.w400,
+        titleMedium: GoogleFonts.roboto(
+          color: colorScheme.onSurface,
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w700,
+        ),
+        displayLarge: GoogleFonts.roboto(
+          color: colorScheme.onSurface,
+          fontSize: 24.sp,
+          fontWeight: FontWeight.w700,
+        ),
+        displayMedium: GoogleFonts.roboto(
+          color: Color(0XFFADADAD),
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w700,
         ),
         labelMedium: GoogleFonts.roboto(
           color: colorScheme.onSecondary,
@@ -76,6 +91,21 @@ abstract class AppTheme {
         style: ElevatedButton.styleFrom(
           backgroundColor: colorScheme.primary,
           foregroundColor: colorScheme.onPrimary,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(16.r),
+          ),
+          minimumSize: Size(double.infinity, 56.h),
+          textStyle: GoogleFonts.roboto(
+            fontSize: 20.sp,
+            fontWeight: FontWeight.w400,
+          ),
+        ),
+      ),
+
+      filledButtonTheme: FilledButtonThemeData(
+        style: FilledButton.styleFrom(
+          backgroundColor: colorScheme.error,
+          foregroundColor: colorScheme.onError,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(16.r),
           ),
