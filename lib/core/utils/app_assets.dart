@@ -54,6 +54,14 @@ abstract class AppAvatars {
   static const String avatar9 = '${_baseUrl}avatar_9.png';
 }
 
+abstract class LottieAnimations {
+  static const String _baseUrl = 'assets/lottie/';
+  static const String waiting = '${_baseUrl}waiting.json';
+  static const String error = '${_baseUrl}error.json';
+  static const String noInternetConnection =
+      '${_baseUrl}no_internet_connection.json';
+}
+
 abstract class NetworkImages {
   static const String noImageAvailable =
       'https://www.mountainmotorvehicles.co.uk/wp-content/uploads/2024/05/No-image-available-2.jpg';

@@ -26,4 +26,7 @@ abstract class RetrofitClient {
   Future<MovieSuggestionsResponse> getMovieSuggestions(
     @Queries() Map<String, dynamic> query,
   );
+
+  @GET(EndPoints.listMovies)
+  Future<Movie> search(@Queries() Map<String, dynamic> query);
 }

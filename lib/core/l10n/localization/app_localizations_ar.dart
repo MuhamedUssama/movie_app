@@ -157,4 +157,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get genres => 'التصنيفات';
+
+  @override
+  String get search => 'ابحث';
 }
