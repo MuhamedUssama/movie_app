@@ -21,12 +21,14 @@ class SearchTextField extends StatelessWidget {
       shadowColor: Theme.of(context).colorScheme.surface,
       scrolledUnderElevation: 0,
       title: CustomTextField(
-        controller: context.read<SearchTabViewModel>().controller,
+        controller: context.watch<SearchTabViewModel>().controller,
         hintText: AppLocalizations.of(context)!.search,
         keyboardType: TextInputType.name,
         textInputAction: TextInputAction.search,
         prefixIcon: SvgPicture.asset(AppIcons.search, fit: BoxFit.scaleDown),
-        onChanged: (query) => context.read<SearchTabViewModel>().search(query),
+        onFieldSubmitted: (query) {
+          context.read<SearchTabViewModel>().search(query);
+        },
       ),
     );
   }

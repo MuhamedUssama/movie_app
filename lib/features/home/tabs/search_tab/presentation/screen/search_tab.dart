@@ -3,8 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:movie_app_new_design/core/di/di.dart';
 import 'package:movie_app_new_design/features/home/tabs/search_tab/presentation/cubit/search_tab_view_model.dart';
 
-import '../widgets/search_tab_body.dart';
-import '../widgets/search_text_field.dart';
+import '../widgets/search_tab_custom_scroll_view.dart';
 
 class SearchTab extends StatelessWidget {
   const SearchTab({super.key});
@@ -13,9 +12,7 @@ class SearchTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => getIt.get<SearchTabViewModel>(),
-      child: CustomScrollView(
-        slivers: <Widget>[const SearchTextField(), const SearchTabBody()],
-      ),
+      child: SearchTabCustomScrollView(),
     );
   }
 }

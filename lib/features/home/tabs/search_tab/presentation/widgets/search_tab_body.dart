@@ -26,7 +26,8 @@ class SearchTabBody extends StatelessWidget {
           return SearchErrorStateWidget(exception: state.exception);
         } else if (state is SearchTabSuccessState) {
           return SearchSuccessStateWidget(
-            movies: state.movie.data?.movies ?? [],
+            movies: state.movies ?? [],
+            state: state,
           );
         } else {
           return SliverFillRemaining(
