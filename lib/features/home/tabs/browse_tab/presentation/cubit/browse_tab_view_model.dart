@@ -15,12 +15,20 @@ class BrowseTabViewModel extends Cubit<BrowseTabStates> {
   BrowseTabViewModel(this._loadGenresUsecase, this._moviesByGenreUsecase)
     : super(const BrowseTabInitialState()) {
     loadGenres();
-    getMoviesByGenre();
   }
 
   static List<String> _cachedGenres = [];
+  List<String> listOfGenres = [];
   String _selectedGenre = '';
+  int currnetTabIndex = 0;
   int page = 1;
+
+  void changeTabIndex(int index) async {
+    currnetTabIndex = index;
+    _selectedGenre = listOfGenres[currnetTabIndex];
+    emit(ChangeGenreTabIndex(currnetTabIndex));
+    await getMoviesByGenre(_selectedGenre);
+  }
 
   Future<void> loadGenres() async {
     if (_cachedGenres.isEmpty) {
@@ -31,18 +39,21 @@ class BrowseTabViewModel extends Cubit<BrowseTabStates> {
 
     result.fold(
       (message) => emit(LoadGenresFailureState(message.message.toString())),
-      (genres) {
+      (genres) async {
         _cachedGenres = genres;
+        listOfGenres = genres;
         _selectedGenre = _cachedGenres.first;
         emit(LoadGenresSuccessState(_cachedGenres));
+
+        await getMoviesByGenre(_selectedGenre);
       },
     );
   }
 
-  Future<void> getMoviesByGenre() async {
+  Future<void> getMoviesByGenre(String genre) async {
     emit(const LoadMoviesLoadingState());
 
-    final BrosweParams params = BrosweParams(genre: _selectedGenre, page: page);
+    final BrosweParams params = BrosweParams(genre: genre, page: page);
     final result = await _moviesByGenreUsecase(params);
 
     result.fold(

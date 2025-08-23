@@ -9,6 +9,11 @@ class BrowseTabInitialState extends BrowseTabStates {
   const BrowseTabInitialState();
 }
 
+class ChangeGenreTabIndex extends BrowseTabStates {
+  final int index;
+  const ChangeGenreTabIndex(this.index);
+}
+
 class LoadGenresLoadingState extends BrowseTabStates {
   const LoadGenresLoadingState();
 }
