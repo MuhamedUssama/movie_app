@@ -6,11 +6,11 @@ import 'package:movie_app_new_design/features/home/tabs/browse_tab/data/models/b
 import 'package:movie_app_new_design/features/home/tabs/browse_tab/domain/repository/browse_tab_repository.dart';
 
 @injectable
-class GetMoviesByGenre {
+class GetMoviesByGenreUsecase {
   final BrowseTabRepository _repository;
 
   @factoryMethod
-  const GetMoviesByGenre(this._repository);
+  const GetMoviesByGenreUsecase(this._repository);
 
   Future<Either<ServerException, Movie>> call(BrosweParams params) async =>
       _repository.getMoviesByGenre(params);

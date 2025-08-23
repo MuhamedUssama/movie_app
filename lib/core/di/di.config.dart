@@ -49,10 +49,12 @@ import '../../features/home/tabs/browse_tab/data/repository_impl/browse_tab_repo
     as _i673;
 import '../../features/home/tabs/browse_tab/domain/repository/browse_tab_repository.dart'
     as _i352;
-import '../../features/home/tabs/browse_tab/domain/usecases/get_movies_by_genre.dart'
-    as _i588;
+import '../../features/home/tabs/browse_tab/domain/usecases/get_movies_by_genre_usecase.dart'
+    as _i721;
 import '../../features/home/tabs/browse_tab/domain/usecases/load_genres_usecase.dart'
     as _i639;
+import '../../features/home/tabs/browse_tab/presentation/cubit/browse_tab_view_model.dart'
+    as _i462;
 import '../../features/home/tabs/home_tab/data/data_sorces/remote/home_tab_remote_data_source.dart'
     as _i359;
 import '../../features/home/tabs/home_tab/data/data_sorces/remote/home_tab_remote_data_source_impl.dart'
@@ -182,13 +184,19 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i639.LoadGenresUsecase>(
       () => _i639.LoadGenresUsecase(gh<_i352.BrowseTabRepository>()),
     );
-    gh.factory<_i588.GetMoviesByGenre>(
-      () => _i588.GetMoviesByGenre(gh<_i352.BrowseTabRepository>()),
+    gh.factory<_i721.GetMoviesByGenreUsecase>(
+      () => _i721.GetMoviesByGenreUsecase(gh<_i352.BrowseTabRepository>()),
     );
     gh.factory<_i464.LoginViewModel>(
       () => _i464.LoginViewModel(
         gh<_i599.LoginWithEmailAndPasswordUsecase>(),
         gh<_i70.LoginWithGoogleUsecase>(),
+      ),
+    );
+    gh.factory<_i462.BrowseTabViewModel>(
+      () => _i462.BrowseTabViewModel(
+        gh<_i639.LoadGenresUsecase>(),
+        gh<_i721.GetMoviesByGenreUsecase>(),
       ),
     );
     gh.factory<_i401.GetMoviesByDate>(
