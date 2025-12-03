@@ -1,18 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:movie_app_new_design/features/home/tabs/browse_tab/presentation/cubit/browse_tab_view_model.dart';
 
 class GenreTabItem extends StatelessWidget {
   final String genre;
-  final bool isSelected;
+  final int index;
 
-  const GenreTabItem({
-    super.key,
-    required this.isSelected,
-    required this.genre,
-  });
+  const GenreTabItem({super.key, required this.index, required this.genre});
 
   @override
   Widget build(BuildContext context) {
+    final bool isSelected = context.select<BrowseTabViewModel, bool>(
+      (viewModel) => viewModel.currentTabIndex == index,
+    );
     final ColorScheme colorScheme = Theme.of(context).colorScheme;
     return Container(
       padding: EdgeInsets.symmetric(horizontal: 16.w, vertical: 12.h),

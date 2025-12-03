@@ -20,13 +20,13 @@ class BrowseTabViewModel extends Cubit<BrowseTabStates> {
   static List<String> _cachedGenres = [];
   List<String> listOfGenres = [];
   String _selectedGenre = '';
-  int currnetTabIndex = 0;
+  int currentTabIndex = 0;
   int page = 1;
 
   void changeTabIndex(int index) async {
-    currnetTabIndex = index;
-    _selectedGenre = listOfGenres[currnetTabIndex];
-    emit(ChangeGenreTabIndex(currnetTabIndex));
+    currentTabIndex = index;
+    _selectedGenre = listOfGenres[currentTabIndex];
+    emit(ChangeGenreTabIndex(currentTabIndex));
     await getMoviesByGenre(_selectedGenre);
   }
 

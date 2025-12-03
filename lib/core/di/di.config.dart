@@ -181,11 +181,11 @@ extension GetItInjectableX on _i174.GetIt {
     gh.factory<_i431.MovieDetailsRepository>(
       () => _i476.MovieDetailsRepositoryImpl(gh<_i37.MovieDeatilsDataSource>()),
     );
-    gh.factory<_i639.LoadGenresUsecase>(
-      () => _i639.LoadGenresUsecase(gh<_i352.BrowseTabRepository>()),
-    );
     gh.factory<_i721.GetMoviesByGenreUsecase>(
       () => _i721.GetMoviesByGenreUsecase(gh<_i352.BrowseTabRepository>()),
+    );
+    gh.factory<_i639.LoadGenresUsecase>(
+      () => _i639.LoadGenresUsecase(gh<_i352.BrowseTabRepository>()),
     );
     gh.factory<_i464.LoginViewModel>(
       () => _i464.LoginViewModel(
