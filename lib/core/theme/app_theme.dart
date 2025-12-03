@@ -164,6 +164,25 @@ abstract class AppTheme {
           borderSide: BorderSide(color: Colors.transparent, width: 0),
         ),
       ),
+
+      tabBarTheme: TabBarThemeData(
+        dividerHeight: 0,
+        dividerColor: Colors.transparent,
+        overlayColor: WidgetStateProperty.all(Colors.transparent),
+        tabAlignment: TabAlignment.start,
+        indicatorColor: Colors.transparent,
+        labelPadding: EdgeInsets.symmetric(horizontal: 8.w),
+        labelStyle: GoogleFonts.inter(
+          color: colorScheme.onPrimary,
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w700,
+        ),
+        unselectedLabelStyle: GoogleFonts.inter(
+          color: colorScheme.primary,
+          fontSize: 20.sp,
+          fontWeight: FontWeight.w700,
+        ),
+      ),
     );
   }
 

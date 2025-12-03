@@ -10,7 +10,7 @@ part of 'retrofit_client.dart';
 
 class _RetrofitClient implements RetrofitClient {
   _RetrofitClient(this._dio, {this.baseUrl, this.errorLogger}) {
-    baseUrl ??= 'https://yts.mx/api/v2/';
+    baseUrl ??= 'https://yts.lt/api/v2/';
   }
 
   final Dio _dio;
@@ -30,7 +30,7 @@ class _RetrofitClient implements RetrofitClient {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'https://yts.mx/api/v2/list_movies.json',
+            'https://yts.lt/api/v2/list_movies.json',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -58,7 +58,7 @@ class _RetrofitClient implements RetrofitClient {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'https://yts.mx/api/v2/movie_details.json',
+            'https://yts.lt/api/v2/movie_details.json',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -88,7 +88,7 @@ class _RetrofitClient implements RetrofitClient {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'https://yts.mx/api/v2/movie_suggestions.json',
+            'https://yts.lt/api/v2/movie_suggestions.json',
             queryParameters: queryParameters,
             data: _data,
           )
@@ -116,7 +116,7 @@ class _RetrofitClient implements RetrofitClient {
       Options(method: 'GET', headers: _headers, extra: _extra)
           .compose(
             _dio.options,
-            'https://yts.mx/api/v2/list_movies.json',
+            'https://yts.lt/api/v2/list_movies.json',
             queryParameters: queryParameters,
             data: _data,
           )
